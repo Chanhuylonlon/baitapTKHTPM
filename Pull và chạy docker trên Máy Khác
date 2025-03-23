@@ -1,0 +1,18 @@
+services:
+  site1:
+    image: your-dockerhub-username/site1:latest
+    container_name: site1_container
+    restart: always
+    ports:
+      - "8001:80"
+    depends_on:
+      - mysql
+
+  site2:
+    image: your-dockerhub-username/site2:latest
+    container_name: site2_container
+    restart: always
+    ports:
+      - "8002:80"
+    depends_on:
+      - mysql
